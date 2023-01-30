@@ -26,7 +26,7 @@ streamlit.dataframe(fruits_to_show)
 #New Section to display
 
 streamlit.header("Fruityvice Fruit Advice!")
-try:
+try:  
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
   #streamlit.write('The user entered ', fruit_choice)
   if not fruit_choice:
@@ -37,8 +37,9 @@ try:
     fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
     # write your own comment - what does this do?
     streamlit.dataframe(fruityvice_normalized)
+    
  except URLError as e:
-    streamlit.error()
+  streamlit.error()
 
 streamlit.stop()
 
